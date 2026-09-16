@@ -6,9 +6,9 @@ A computer vision-based Optical Mark Recognition (OMR) processing system for aut
 
 This project was developed during my AI/ML internship at **M PRO9 Pvt. Ltd.** as part of an automation workflow for processing scanned OMR answer sheets.
 
-The system uses image-processing and computer-vision techniques to handle scanned OMR documents, correct alignment issues, detect marked bubbles, extract candidate information and answers, identify blank or multiple-marked responses, and generate structured Excel reports.
+The system uses image processing and computer vision techniques to handle scanned OMR documents, correct alignment issues, detect marked bubbles, extract candidate information and answers, identify blank or multiple-marked responses, and generate structured Excel reports.
 
-The implementation includes processing workflows for **KCET and NEET-style OMR formats**.
+The implementation includes separate processing workflows for **KCET and NEET-style OMR formats**.
 
 ## Key Features
 
