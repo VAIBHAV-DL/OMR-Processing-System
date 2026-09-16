@@ -2,14 +2,21 @@ import cv2
 import numpy as np
 import os
 import pandas as pd
+from pathlib import Path
 from pdf2image import convert_from_path
 
 # ==========================================
 # ⚙️ CONFIGURATION
 # ==========================================
-NEET_OMR_PATH = r"C:\Users\Vaibhav\Desktop\Mpro9\OMR_NEW\input\NEET\neet_omr_sheet1_merged.pdf"
-OUTPUT_EXCEL = r"C:\Users\Vaibhav\Desktop\Mpro9\OMR_NEW\output\NEET_Results.xlsx"
-POPPLER_PATH = r"C:\Users\Vaibhav\Desktop\Mpro9\OMR_NEW\poppler-25.12.0\Library\bin"
+BASE_DIR = Path(__file__).resolve().parent
+INPUT_DIR = BASE_DIR / "input" / "NEET"
+OUTPUT_DIR = BASE_DIR / "output"
+
+NEET_OMR_PATH = INPUT_DIR / "neet_omr_sheet1_merged.pdf"
+OUTPUT_EXCEL = OUTPUT_DIR / "NEET_Results.xlsx"
+POPPLER_PATH = None
+
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 # 📍 YOUR PERFECTED LADDER ZONES
 ZONE_L = [19, 155, 155, 2818]
