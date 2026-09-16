@@ -2,14 +2,21 @@ import cv2
 import numpy as np
 import os
 import pandas as pd
+from pathlib import Path
 from pdf2image import convert_from_path
 
 # ==========================================
 # ⚙️ CONFIGURATION
 # ==========================================
-MERGED_PDF_PATH = r"C:\Users\Vaibhav\Desktop\Mpro9\OMR_NEW\input\kcet_omr_merged.pdf"
-OUTPUT_EXCEL = r"C:\Users\Vaibhav\Desktop\Mpro9\OMR_NEW\output\OMR_Results.xlsx"
-POPPLER_PATH = r"C:\Users\Vaibhav\Desktop\Mpro9\OMR_NEW\poppler-25.12.0\Library\bin"
+BASE_DIR = Path(__file__).resolve().parent
+INPUT_DIR = BASE_DIR / "input"
+OUTPUT_DIR = BASE_DIR / "output"
+
+MERGED_PDF_PATH = INPUT_DIR / "kcet_omr_merged.pdf"
+OUTPUT_EXCEL = OUTPUT_DIR / "OMR_Results.xlsx"
+POPPLER_PATH = None
+
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 # 📍 LOCKED COORDINATES
 REF_LADDER_LEFT =  [7, 450, 187, 2600]
